@@ -21,7 +21,29 @@ class SuperFizzBuzz
     end
   end
 
-  
+  def output_range(num_1, num_2)
+    range_outputs = []
+    num_1.upto(num_2).each do |num|
+      if num % 5 == 0 && num % 3 == 0 && num % 7 == 0
+        range_outputs << 'SuperFizzBuzz'
+      elsif num % 3 == 0 && num % 7 == 0 && num % 5 != 0
+        range_outputs << 'SuperFizz' 
+      elsif num % 5 == 0 && num % 7 == 0 && num % 3 != 0 
+        range_outputs << 'SuperBuzz' 
+      elsif num % 3 == 0 && num % 5 == 0 && num % 7 != 0
+        range_outputs << 'FizzBuzz'
+      elsif num % 5 != 0 && num % 7 != 0 && num % 3 == 0 
+        range_outputs << 'Fizz'
+      elsif num % 7 != 0 && num % 3 != 0 && num % 5 == 0 
+        range_outputs << 'Buzz'
+      elsif num % 7 == 0 && num % 3 != 0 && num % 5 != 0
+        range_outputs << 'Super'
+      else
+        range_outputs << num.to_s
+      end
+    end
+    range_outputs
+  end
 end
 
 # Iterate through the numbers 1 to 1000
